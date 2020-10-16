@@ -58,10 +58,10 @@ function getMaxEnergy() {
 
 function gainResource(resource){
 	if(resource === RESOURCE.Plasma){
-		if(getResource(RESOURCE.Energy) >= 1000 * gainNum && getResource(RESOURCE.Hydrogen) >= 10 * gainNum && getResource(RESOURCE.Plasma) < getMaxPlasma()){
+		if(getResource(RESOURCE.Energy) >= 1 * gainNum && getResource(RESOURCE.Hydrogen) >= 1 * gainNum && getResource(RESOURCE.Plasma) < getMaxPlasma()){
 			Game.resources.addResource(RESOURCE.Plasma, gainNum);
-			Game.resources.takeResource(RESOURCE.Energy, 1000 * gainNum);
-			Game.resources.takeResource(RESOURCE.Hydrogen, 10 * gainNum);
+			Game.resources.takeResource(RESOURCE.Energy, 1 * gainNum);
+			Game.resources.takeResource(RESOURCE.Hydrogen, 1 * gainNum);
 			Game.statistics.add('manualResources', gainNum);
 		}
 	} else if(resource === RESOURCE.Charcoal){
