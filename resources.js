@@ -67,7 +67,7 @@ function gainResource(resource){
 	} else if(resource === RESOURCE.Charcoal){
 		if(getResource(RESOURCE.Charcoal) < getStorage(RESOURCE.Charcoal) && getResource(RESOURCE.Wood) >= 0 * gainNum){
 			Game.resources.addResource(RESOURCE.Charcoal, gainNum);
-			Game.resources.takeResource(RESOURCE.Wood, 0 * gainNum);
+			Game.resources.takeResource(RESOURCE.Wood, 1 * gainNum);
 			Game.statistics.add('manualResources', gainNum);
 		}
 	} else if(resource === RESOURCE.Meteorite){
@@ -115,11 +115,11 @@ function upgradeMetalStorage(){
 }
 
 function upgradeGemStorage(){
-	if(getResource(RESOURCE.Gem) >= getStorage(RESOURCE.Gem)*storagePrice && getResource(RESOURCE.Metal) >= getStorage(RESOURCE.Gem)/2.5*storagePrice){
+	if(getResource(RESOURCE.Gem) >= getStorage(RESOURCE.Gem)*storagePrice && getResource(RESOURCE.Metal) >= getStorage(RESOURCE.Gem)/1*storagePrice){
 		Game.resources.takeResource(RESOURCE.Gem, getStorage(RESOURCE.Gem)*storagePrice);
-		Game.resources.takeResource(RESOURCE.Metal, getStorage(RESOURCE.Gem)/2.5*storagePrice);
+		Game.resources.takeResource(RESOURCE.Metal, getStorage(RESOURCE.Gem)/1*storagePrice);
 		gemStorage = gemNextStorage;
-		gemNextStorage *= 2;
+		gemNextStorage *= 1;
 	}
 }
 
