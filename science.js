@@ -6,7 +6,6 @@ function getLab(){
 		gem -= labGemCost;
 		metal -= labMetalCost;
 		lab += 1;
-		updateLabCost();
 	}
 }
 
@@ -16,7 +15,6 @@ function getLabT2(){
 		gem -= labT2GemCost;
 		metal -= labT2MetalCost;
 		labT2 += 1;
-		updateLabCost();
 	}
 }
 
@@ -26,7 +24,6 @@ function getLabT3(){
 		gem -= labT3GemCost;
 		metal -= labT3MetalCost;
 		labT3 += 1;
-		updateLabCost();
 	}
 }
 
@@ -36,7 +33,6 @@ function getLabT4(){
 		gem -= labT4GemCost;
 		metal -= labT4MetalCost;
 		labT4 += 1;
-		updateLabCost();
 	}
 }
 
@@ -46,7 +42,6 @@ function getLabT5(){
 		gem -= labT5GemCost;
 		metal -= labT5MetalCost;
 		labT5 += 1;
-		updateLabCost();
 	}
 }
 
