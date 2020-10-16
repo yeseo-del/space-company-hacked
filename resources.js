@@ -65,14 +65,14 @@ function gainResource(resource){
 			Game.statistics.add('manualResources', gainNum);
 		}
 	} else if(resource === RESOURCE.Charcoal){
-		if(getResource(RESOURCE.Charcoal) < getStorage(RESOURCE.Charcoal) && getResource(RESOURCE.Wood) >= 2 * gainNum){
+		if(getResource(RESOURCE.Charcoal) < getStorage(RESOURCE.Charcoal) && getResource(RESOURCE.Wood) >= 0 * gainNum){
 			Game.resources.addResource(RESOURCE.Charcoal, gainNum);
 			Game.resources.takeResource(RESOURCE.Wood, 0 * gainNum);
 			Game.statistics.add('manualResources', gainNum);
 		}
 	} else if(resource === RESOURCE.Meteorite){
 		if(getResource(RESOURCE.Meteorite) < getStorage(RESOURCE.Meteorite)){
-			if(getResource(RESOURCE.Plasma) >= 3 * gainNum){
+			if(getResource(RESOURCE.Plasma) >= 1 * gainNum){
 				Game.resources.addResource(RESOURCE.Meteorite, gainNum);
 				Game.resources.takeResource(RESOURCE.Plasma, 1 * gainNum);
 				Game.statistics.add('manualResources', gainNum);
