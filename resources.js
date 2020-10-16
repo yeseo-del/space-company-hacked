@@ -67,14 +67,14 @@ function gainResource(resource){
 	} else if(resource === RESOURCE.Charcoal){
 		if(getResource(RESOURCE.Charcoal) < getStorage(RESOURCE.Charcoal) && getResource(RESOURCE.Wood) >= 2 * gainNum){
 			Game.resources.addResource(RESOURCE.Charcoal, gainNum);
-			Game.resources.takeResource(RESOURCE.Wood, 2 * gainNum);
+			Game.resources.takeResource(RESOURCE.Wood, 0 * gainNum);
 			Game.statistics.add('manualResources', gainNum);
 		}
 	} else if(resource === RESOURCE.Meteorite){
 		if(getResource(RESOURCE.Meteorite) < getStorage(RESOURCE.Meteorite)){
 			if(getResource(RESOURCE.Plasma) >= 3 * gainNum){
 				Game.resources.addResource(RESOURCE.Meteorite, gainNum);
-				Game.resources.takeResource(RESOURCE.Plasma, 3 * gainNum);
+				Game.resources.takeResource(RESOURCE.Plasma, 1 * gainNum);
 				Game.statistics.add('manualResources', gainNum);
 			}
 		}
@@ -666,7 +666,6 @@ function getPSU(){
 		Game.resources.takeResource(RESOURCE.Gold, PSUGoldCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Uranium, PSUUraniumCost * T1Price);
 		PSU += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -677,7 +676,6 @@ function getPSUT2(){
 		Game.resources.takeResource(RESOURCE.Gold, PSUT2GoldCost);
 		Game.resources.takeResource(RESOURCE.Uranium, PSUT2UraniumCost);
 		PSUT2 += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -688,7 +686,6 @@ function getHeater(){
 		Game.resources.takeResource(RESOURCE.Gem, heaterGemCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Silicon, heaterSiliconCost * T1Price);
 		heater += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -699,7 +696,6 @@ function getPlasmatic(){
 		Game.resources.takeResource(RESOURCE.Silicon, plasmaticSiliconCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, plasmaticMeteoriteCost);
 		plasmatic += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -710,7 +706,6 @@ function getBath(){
 		Game.resources.takeResource(RESOURCE.Gold, bathGoldCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, bathMeteoriteCost);
 		bath += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -721,7 +716,6 @@ function getBattery(){
 		Game.resources.takeResource(RESOURCE.Gem, batteryGemCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Lunarite, batteryLunariteCost * T1Price);
 		battery += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -732,7 +726,6 @@ function getBatteryT2(){
 		Game.resources.takeResource(RESOURCE.Gem, batteryT2GemCost);
 		Game.resources.takeResource(RESOURCE.Lunarite, batteryT2LunariteCost);
 		batteryT2 += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -743,7 +736,6 @@ function getBatteryT3(){
 		Game.resources.takeResource(RESOURCE.Gem, batteryT3GemCost);
 		Game.resources.takeResource(RESOURCE.Lunarite, batteryT3LunariteCost);
 		batteryT3 += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -754,7 +746,6 @@ function getBatteryT4(){
 		Game.resources.takeResource(RESOURCE.Gem, batteryT4GemCost);
 		Game.resources.takeResource(RESOURCE.Lunarite, batteryT4LunariteCost);
 		batteryT4+=1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -765,7 +756,6 @@ function getBatteryT5(){
 		Game.resources.takeResource(RESOURCE.Gem, batteryT5GemCost);
 		Game.resources.takeResource(RESOURCE.Lunarite, batteryT5LunariteCost);
 		batteryT5+=1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -775,7 +765,6 @@ function getCharcoalEngine(){
 		Game.resources.takeResource(RESOURCE.Metal, charcoalEngineMetalCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Gem, charcoalEngineGemCost * T1Price);
 		charcoalEngine += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -785,7 +774,6 @@ function getSolarPanel(){
 		Game.resources.takeResource(RESOURCE.Metal, solarPanelMetalCost);
 		Game.resources.takeResource(RESOURCE.Gem, solarPanelGemCost);
 		solarPanel += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -795,7 +783,6 @@ function getMethaneStation(){
 		Game.resources.takeResource(RESOURCE.Lunarite, methaneStationLunariteCost);
 		Game.resources.takeResource(RESOURCE.Titanium, methaneStationTitaniumCost);
 		methaneStation += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -805,7 +792,6 @@ function getNuclearStation(){
 		Game.resources.takeResource(RESOURCE.Lunarite, nuclearStationLunariteCost);
 		Game.resources.takeResource(RESOURCE.Titanium, nuclearStationTitaniumCost);
 		nuclearStation += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -816,7 +802,6 @@ function getMagmatic(){
 		Game.resources.takeResource(RESOURCE.Gem, magmaticGemCost);
 		Game.resources.takeResource(RESOURCE.Silver, magmaticSilverCost);
 		magmatic += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -827,7 +812,6 @@ function getFusionReactor(){
 		Game.resources.takeResource(RESOURCE.Titanium, fusionReactorTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Silicon, fusionReactorSiliconCost);
 		fusionReactor += 1;
-		updateCost();
 		Game.statistics.add('tierOwned6');
 	}
 }
@@ -838,7 +822,6 @@ function getGrinder(){
 		Game.resources.takeResource(RESOURCE.Lunarite, grinderLunariteCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Gold, grinderGoldCost * T1Price);
 		grinder += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -849,7 +832,6 @@ function getCubic(){
 		Game.resources.takeResource(RESOURCE.Lunarite, cubicLunariteCost);
 		Game.resources.takeResource(RESOURCE.Oil, cubicOilCost);
 		cubic += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -860,7 +842,6 @@ function getEnricher(){
 		Game.resources.takeResource(RESOURCE.Titanium, enricherTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Silicon, enricherSiliconCost);
 		enricher += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -871,7 +852,6 @@ function getRecycler(){
 		Game.resources.takeResource(RESOURCE.Methane, recyclerMethaneCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, recyclerMeteoriteCost);
 		recycler += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -881,7 +861,6 @@ function getPump(){
 		Game.resources.takeResource(RESOURCE.Metal, pumpMetalCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Gem, pumpGemCost * T1Price);
 		pump += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -892,7 +871,6 @@ function getPumpjack(){
 		Game.resources.takeResource(RESOURCE.Gem, pumpjackGemCost);
 		Game.resources.takeResource(RESOURCE.Oil, pumpjackOilCost);
 		pumpjack += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -903,7 +881,6 @@ function getOilField(){
 		Game.resources.takeResource(RESOURCE.Titanium, oilFieldTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Silicon, oilFieldSiliconCost);
 		oilField += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -914,7 +891,6 @@ function getOilRig(){
 		Game.resources.takeResource(RESOURCE.Titanium, oilRigTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, oilRigMeteoriteCost);
 		oilRig += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -924,7 +900,6 @@ function getMiner(){
 		Game.resources.takeResource(RESOURCE.Metal, minerMetalCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Wood, minerWoodCost * T1Price);
 		miner += 1;
-		updateCost();
 		if(researchUnlocked === false){
 			if(miner >= 1){
 				document.getElementById("researchTab").className = "";
@@ -945,7 +920,6 @@ function getHeavyDrill(){
 		Game.resources.takeResource(RESOURCE.Gem, heavyDrillGemCost);
 		Game.resources.takeResource(RESOURCE.Oil, heavyDrillOilCost);
 		heavyDrill += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -956,7 +930,6 @@ function getGigaDrill(){
 		Game.resources.takeResource(RESOURCE.Gem, gigaDrillGemCost);
 		Game.resources.takeResource(RESOURCE.Silicon, gigaDrillSiliconCost);
 		gigaDrill += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -967,7 +940,6 @@ function getQuantumDrill(){
 		Game.resources.takeResource(RESOURCE.Gold, quantumDrillGoldCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, quantumDrillMeteoriteCost);
 		quantumDrill += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -977,7 +949,6 @@ function getGemMiner(){
 		Game.resources.takeResource(RESOURCE.Metal, gemMinerMetalCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Gem, gemMinerGemCost * T1Price);
 		gemMiner += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -988,7 +959,6 @@ function getAdvancedDrill(){
 		Game.resources.takeResource(RESOURCE.Gem, advancedDrillGemCost);
 		Game.resources.takeResource(RESOURCE.Oil, advancedDrillOilCost);
 		advancedDrill += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -999,7 +969,6 @@ function getDiamondDrill(){
 		Game.resources.takeResource(RESOURCE.Gem, diamondDrillGemCost);
 		Game.resources.takeResource(RESOURCE.Silicon, diamondDrillSiliconCost);
 		diamondDrill += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1010,7 +979,6 @@ function getCarbyneDrill(){
 		Game.resources.takeResource(RESOURCE.Gem, carbyneDrillGemCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, carbyneDrillMeteoriteCost);
 		carbyneDrill += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1020,7 +988,6 @@ function getWoodburner(){
 		Game.resources.takeResource(RESOURCE.Metal, woodburnerMetalCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Wood, woodburnerWoodCost * T1Price);
 		woodburner += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -1031,7 +998,6 @@ function getFurnace(){
 		Game.resources.takeResource(RESOURCE.Wood, furnaceWoodCost);
 		Game.resources.takeResource(RESOURCE.Oil, furnaceOilCost);
 		furnace += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -1042,7 +1008,6 @@ function getKiln(){
 		Game.resources.takeResource(RESOURCE.Gem, kilnGemCost);
 		Game.resources.takeResource(RESOURCE.Silicon, kilnSiliconCost);
 		kiln += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1053,7 +1018,6 @@ function getFryer(){
 		Game.resources.takeResource(RESOURCE.Lava, fryerLavaCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, fryerMeteoriteCost);
 		fryer += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -1063,7 +1027,6 @@ function getWoodcutter(){
 		Game.resources.takeResource(RESOURCE.Metal, woodcutterMetalCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Wood, woodcutterWoodCost * T1Price);
 		woodcutter += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -1074,7 +1037,6 @@ function getLaserCutter(){
 		Game.resources.takeResource(RESOURCE.Gem, laserCutterGemCost);
 		Game.resources.takeResource(RESOURCE.Oil, laserCutterOilCost);
 		laserCutter += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -1085,7 +1047,6 @@ function getDeforester(){
 		Game.resources.takeResource(RESOURCE.Titanium, deforesterTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Silicon, deforesterSiliconCost);
 		deforester += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1096,7 +1057,6 @@ function getInfuser(){
 		Game.resources.takeResource(RESOURCE.Oil, infuserOilCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, infuserMeteoriteCost);
 		infuser += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -1105,7 +1065,6 @@ function getMoonWorker(){
 	if(getResource(RESOURCE.Gem) >= moonWorkerGemCost * T1Price){
 		Game.resources.takeResource(RESOURCE.Gem, moonWorkerGemCost * T1Price);
 		moonWorker += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -1116,7 +1075,6 @@ function getMoonDrill(){
 		Game.resources.takeResource(RESOURCE.Gem, moonDrillGemCost);
 		Game.resources.takeResource(RESOURCE.Oil, moonDrillOilCost);
 		moonDrill += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -1127,7 +1085,6 @@ function getMoonQuarry(){
 		Game.resources.takeResource(RESOURCE.Gem, moonQuarryGemCost);
 		Game.resources.takeResource(RESOURCE.Silicon, moonQuarrySiliconCost);
 		moonQuarry += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1148,7 +1105,6 @@ function getVacuum(){
 		Game.resources.takeResource(RESOURCE.Lunarite, vacuumLunariteCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Gem, vacuumGemCost * T1Price);
 		vacuum += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -1159,7 +1115,6 @@ function getSuctionExcavator(){
 		Game.resources.takeResource(RESOURCE.Gem, suctionExcavatorGemCost);
 		Game.resources.takeResource(RESOURCE.Oil, suctionExcavatorOilCost);
 		suctionExcavator += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -1170,7 +1125,6 @@ function getSpaceCow(){
 		Game.resources.takeResource(RESOURCE.Titanium, spaceCowTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Silicon, spaceCowSiliconCost);
 		spaceCow += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1181,7 +1135,6 @@ function getVent(){
 		Game.resources.takeResource(RESOURCE.Helium, ventHeliumCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, ventMeteoriteCost);
 		vent += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -1190,7 +1143,6 @@ function getExplorer(){
 	if(getResource(RESOURCE.Gem) >= explorerGemCost * T1Price){
 		Game.resources.takeResource(RESOURCE.Gem, explorerGemCost * T1Price);
 		explorer += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -1201,7 +1153,6 @@ function getLunariteDrill(){
 		Game.resources.takeResource(RESOURCE.Gem, lunariteDrillGemCost);
 		Game.resources.takeResource(RESOURCE.Oil, lunariteDrillOilCost);
 		lunariteDrill += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -1212,7 +1163,6 @@ function getPentaDrill(){
 		Game.resources.takeResource(RESOURCE.Gem, pentaDrillGemCost);
 		Game.resources.takeResource(RESOURCE.Silicon, pentaDrillSiliconCost);
 		pentaDrill += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1223,7 +1173,6 @@ function getTitanDrill(){
 		Game.resources.takeResource(RESOURCE.Gold, titanDrillGoldCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, titanDrillMeteoriteCost);
 		titanDrill += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -1244,7 +1193,6 @@ function getDestroyer(){
 		Game.resources.takeResource(RESOURCE.Gem, destroyerGemCost);
 		Game.resources.takeResource(RESOURCE.Oil, destroyerOilCost);
 		destroyer += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -1255,7 +1203,6 @@ function getDeathStar(){
 		Game.resources.takeResource(RESOURCE.Silver, deathStarSilverCost);
 		Game.resources.takeResource(RESOURCE.Silicon, deathStarSiliconCost);
 		deathStar += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1266,7 +1213,6 @@ function getActuator(){
 		Game.resources.takeResource(RESOURCE.Helium, actuatorHeliumCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, actuatorMeteoriteCost);
 		actuator += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -1276,7 +1222,6 @@ function getScout(){
 		Game.resources.takeResource(RESOURCE.Lunarite, scoutLunariteCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Titanium, scoutTitaniumCost * T1Price);
 		scout += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -1287,7 +1232,6 @@ function getSpaceLaser(){
 		Game.resources.takeResource(RESOURCE.Gem, spaceLaserGemCost);
 		Game.resources.takeResource(RESOURCE.Oil, spaceLaserOilCost);
 		spaceLaser += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -1298,7 +1242,6 @@ function getBertha(){
 		Game.resources.takeResource(RESOURCE.Titanium, berthaTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Silicon, berthaSiliconCost);
 		bertha += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1309,7 +1252,6 @@ function getCannon(){
 		Game.resources.takeResource(RESOURCE.Oil, cannonOilCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, cannonMeteoriteCost);
 		cannon += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -1319,7 +1261,6 @@ function getBlowtorch(){
 		Game.resources.takeResource(RESOURCE.Lunarite, blowtorchLunariteCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Titanium, blowtorchTitaniumCost * T1Price);
 		blowtorch += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -1330,7 +1271,6 @@ function getScorcher(){
 		Game.resources.takeResource(RESOURCE.Gem, scorcherGemCost);
 		Game.resources.takeResource(RESOURCE.Oil, scorcherOilCost);
 		scorcher += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -1341,7 +1281,6 @@ function getAnnihilator(){
 		Game.resources.takeResource(RESOURCE.Gem, annihilatorGemCost);
 		Game.resources.takeResource(RESOURCE.Silver, annihilatorSilverCost);
 		annihilator += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1352,7 +1291,6 @@ function getDesert(){
 		Game.resources.takeResource(RESOURCE.Silicon, desertSiliconCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, desertMeteoriteCost);
 		desert += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -1362,7 +1300,6 @@ function getCrucible(){
 		Game.resources.takeResource(RESOURCE.Lunarite, crucibleLunariteCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Gem, crucibleGemCost * T1Price);
 		crucible += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -1373,7 +1310,6 @@ function getExtractor(){
 		Game.resources.takeResource(RESOURCE.Titanium, extractorTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Silicon, extractorSiliconCost);
 		extractor += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -1384,7 +1320,6 @@ function getExtruder(){
 		Game.resources.takeResource(RESOURCE.Titanium, extruderTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Silicon, extruderSiliconCost);
 		extruder += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1395,7 +1330,6 @@ function getVeluptuator(){
 		Game.resources.takeResource(RESOURCE.Gold, veluptuatorGoldCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, veluptuatorMeteoriteCost);
 		veluptuator += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -1405,7 +1339,6 @@ function getCollector(){
 		Game.resources.takeResource(RESOURCE.Lunarite, collectorLunariteCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Titanium, collectorTitaniumCost * T1Price);
 		collector += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -1416,7 +1349,6 @@ function getMagnet(){
 		Game.resources.takeResource(RESOURCE.Titanium, magnetTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Gold, magnetGoldCost);
 		magnet += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -1427,7 +1359,6 @@ function getECell(){
 		Game.resources.takeResource(RESOURCE.Silicon, eCellSiliconCost);
 		Game.resources.takeResource(RESOURCE.Gold, eCellGoldCost);
 		eCell += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1438,7 +1369,6 @@ function getHindenburg(){
 		Game.resources.takeResource(RESOURCE.Methane, hindenburgMethaneCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, hindenburgMeteoriteCost);
 		hindenburg += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -1448,7 +1378,6 @@ function getDrone(){
 		Game.resources.takeResource(RESOURCE.Lunarite, droneLunariteCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Silicon, droneSiliconCost * T1Price);
 		drone += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -1459,7 +1388,6 @@ function getTanker(){
 		Game.resources.takeResource(RESOURCE.Titanium, tankerTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Silicon, tankerSiliconCost);
 		tanker += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -1470,7 +1398,6 @@ function getCompressor(){
 		Game.resources.takeResource(RESOURCE.Titanium, compressorTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Silicon, compressorSiliconCost);
 		compressor += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1481,7 +1408,6 @@ function getSkimmer(){
 		Game.resources.takeResource(RESOURCE.Titanium, skimmerTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, skimmerMeteoriteCost);
 		skimmer += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -1491,7 +1417,6 @@ function getIcePick(){
 		Game.resources.takeResource(RESOURCE.Lunarite, icePickLunariteCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Gem, icePickGemCost * T1Price);
 		icePick += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -1502,7 +1427,6 @@ function getIceDrill(){
 		Game.resources.takeResource(RESOURCE.Titanium, iceDrillTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Silicon, iceDrillSiliconCost);
 		iceDrill += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -1513,7 +1437,6 @@ function getFreezer(){
 		Game.resources.takeResource(RESOURCE.Titanium, freezerTitaniumCost);
 		Game.resources.takeResource(RESOURCE.Silicon, freezerSiliconCost);
 		freezer += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1524,7 +1447,6 @@ function getMrFreeze(){
 		Game.resources.takeResource(RESOURCE.Helium, mrFreezeHeliumCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, mrFreezeMeteoriteCost);
 		mrFreeze += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -1534,7 +1456,6 @@ function getPrinter(){
 		Game.resources.takeResource(RESOURCE.Lunarite, printerLunariteCost * T1Price);
 		Game.resources.takeResource(RESOURCE.Silicon, printerSiliconCost * T1Price);
 		printer += 1;
-		updateCost();
 		Game.statistics.add('tierOwned1');
 	}
 }
@@ -1545,7 +1466,6 @@ function getWeb(){
 		Game.resources.takeResource(RESOURCE.Uranium, webUraniumCost);
 		Game.resources.takeResource(RESOURCE.Silicon, webSiliconCost);
 		web += 1;
-		updateCost();
 		Game.statistics.add('tierOwned2');
 	}
 }
@@ -1556,7 +1476,6 @@ function getSmasher(){
 		Game.resources.takeResource(RESOURCE.Silver, smasherSilverCost);
 		Game.resources.takeResource(RESOURCE.Gem, smasherGemCost);
 		smasher += 1;
-		updateCost();
 		Game.statistics.add('tierOwned3');
 	}
 }
@@ -1567,7 +1486,6 @@ function getNebulous(){
 		Game.resources.takeResource(RESOURCE.Lava, nebulousLavaCost);
 		Game.resources.takeResource(RESOURCE.Gold, nebulousGoldCost);
 		nebulous += 1;
-		updateCost();
 		Game.statistics.add('tierOwned4');
 	}
 }
@@ -1583,7 +1501,6 @@ function getPlanetNuke(){
 		Game.resources.takeResource(RESOURCE.Silicon, planetNukeSiliconCost);
 		Game.resources.takeResource(RESOURCE.Ice, planetNukeIceCost);
 		planetNuke += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1594,7 +1511,6 @@ function getCondensator(){
 		Game.resources.takeResource(RESOURCE.Gem, condensatorGemCost);
 		Game.resources.takeResource(RESOURCE.Ice, condensatorIceCost);
 		condensator += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1605,7 +1521,6 @@ function getFossilator(){
 		Game.resources.takeResource(RESOURCE.Charcoal, fossilatorCharcoalCost);
 		Game.resources.takeResource(RESOURCE.Lava, fossilatorLavaCost);
 		fossilator += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1616,7 +1531,6 @@ function getMultiDrill(){
 		Game.resources.takeResource(RESOURCE.Gold, multiDrillGoldCost);
 		Game.resources.takeResource(RESOURCE.Oil, multiDrillOilCost);
 		multiDrill += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1627,7 +1541,6 @@ function getDiamondChamber(){
 		Game.resources.takeResource(RESOURCE.Charcoal, diamondChamberCharcoalCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, diamondChamberMeteoriteCost);
 		diamondChamber += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1638,7 +1551,6 @@ function getMicroPollutor(){
 		Game.resources.takeResource(RESOURCE.Wood, microPollutorWoodCost);
 		Game.resources.takeResource(RESOURCE.Lava, microPollutorLavaCost);
 		microPollutor += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1649,7 +1561,6 @@ function getForest(){
 		Game.resources.takeResource(RESOURCE.Gem, forestGemCost);
 		Game.resources.takeResource(RESOURCE.Hydrogen, forestHydrogenCost);
 		forest += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1660,7 +1571,6 @@ function getTardis(){
 		Game.resources.takeResource(RESOURCE.Silicon, tardisSiliconCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, tardisMeteoriteCost);
 		tardis += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1671,7 +1581,6 @@ function getCloner(){
 		Game.resources.takeResource(RESOURCE.Gold, clonerGoldCost);
 		Game.resources.takeResource(RESOURCE.Methane, clonerMethaneCost);
 		cloner += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1682,7 +1591,6 @@ function getInterCow(){
 		Game.resources.takeResource(RESOURCE.Gold, interCowGoldCost);
 		Game.resources.takeResource(RESOURCE.Hydrogen, interCowHydrogenCost);
 		interCow += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1693,7 +1601,6 @@ function getClub(){
 		Game.resources.takeResource(RESOURCE.Wood, clubWoodCost);
 		Game.resources.takeResource(RESOURCE.Helium, clubHeliumCost);
 		club += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1704,7 +1611,6 @@ function getPhilosopher(){
 		Game.resources.takeResource(RESOURCE.Silver, philosopherSilverCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, philosopherMeteoriteCost);
 		philosopher += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1715,7 +1621,6 @@ function getWerewolf(){
 		Game.resources.takeResource(RESOURCE.Gem, werewolfGemCost);
 		Game.resources.takeResource(RESOURCE.Methane, werewolfMethaneCost);
 		werewolf += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1726,7 +1631,6 @@ function getHarvester(){
 		Game.resources.takeResource(RESOURCE.Wood, harvesterWoodCost);
 		Game.resources.takeResource(RESOURCE.Oil, harvesterOilCost);
 		harvester += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1737,7 +1641,6 @@ function getCage(){
 		Game.resources.takeResource(RESOURCE.Silicon, cageSiliconCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, cageMeteoriteCost);
 		cage += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
@@ -1748,7 +1651,6 @@ function getOverexchange(){
 		Game.resources.takeResource(RESOURCE.Silver, overexchangeSilverCost);
 		Game.resources.takeResource(RESOURCE.Helium, overexchangeHeliumCost);
 		overexchange += 1;
-		updateCost();
 		Game.statistics.add('tierOwned5');
 	}
 }
