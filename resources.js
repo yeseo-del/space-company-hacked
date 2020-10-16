@@ -115,11 +115,11 @@ function upgradeMetalStorage(){
 }
 
 function upgradeGemStorage(){
-	if(getResource(RESOURCE.Gem) >= getStorage(RESOURCE.Gem)*storagePrice && getResource(RESOURCE.Metal) >= getStorage(RESOURCE.Gem)/1*storagePrice){
+	if(getResource(RESOURCE.Gem) >= getStorage(RESOURCE.Gem)*storagePrice && getResource(RESOURCE.Metal) >= getStorage(RESOURCE.Gem)/2.5*storagePrice){
 		Game.resources.takeResource(RESOURCE.Gem, getStorage(RESOURCE.Gem)*storagePrice);
-		Game.resources.takeResource(RESOURCE.Metal, getStorage(RESOURCE.Gem)/1*storagePrice);
+		Game.resources.takeResource(RESOURCE.Metal, getStorage(RESOURCE.Gem)/2.5*storagePrice);
 		gemStorage = gemNextStorage;
-		gemNextStorage *= 1;
+		gemNextStorage *= 2;
 	}
 }
 
