@@ -122,14 +122,14 @@ Game.commsData = (function(){
 		max: 1,
 		completed: false,
 		cost: {
-			'metal': 60000000000,
-			'ice': 6000000000,
-			'meteorite': 60000000
+			'metal': 1,
+			'ice': 1,
+			'meteorite': 1
 		},
 		defaultCost: {
-			'metal': 60000000000,
-			'ice': 6000000000,
-			'meteorite': 60000000
+			'metal': 1,
+			'ice': 1,
+			'meteorite': 1
 		}
 	};
 
@@ -141,14 +141,14 @@ Game.commsData = (function(){
 		unlocked: true,
 		displayNeedsUpdate: true,
 		cost: {
-			'metal': 38600000000,
-			'ice': 4320000000,
-			'meteorite': 15800000
+			'metal': 1,
+			'ice': 1,
+			'meteorite': 1
 		},
 		defaultCost: {
-			'metal': 38600000000,
-			'ice': 4320000000,
-			'meteorite': 15800000
+			'metal': 1,
+			'ice': 1,
+			'meteorite': 1
 		}
 	};
 
