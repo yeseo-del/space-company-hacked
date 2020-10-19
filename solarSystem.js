@@ -31,24 +31,24 @@ function getHydrazine(){
 }
 
 function updateFuelProductionCost(){
-    chemicalPlantOilCost = Math.floor(500 * Math.pow(1.1,chemicalPlant));
-    chemicalPlantGemCost = Math.floor(750 * Math.pow(1.1,chemicalPlant));
-    chemicalPlantMetalCost = Math.floor(1000 * Math.pow(1.1,chemicalPlant));
+    chemicalPlantOilCost = Math.floor(1 * Math.pow(1.1,chemicalPlant));
+    chemicalPlantGemCost = Math.floor(1 * Math.pow(1.1,chemicalPlant));
+    chemicalPlantMetalCost = Math.floor(1 * Math.pow(1.1,chemicalPlant));
 
-    oxidisationOilCost = Math.floor(6800 * Math.pow(1.1,oxidisation));
-    oxidisationGemCost = Math.floor(8300 * Math.pow(1.1,oxidisation));
-    oxidisationMetalCost = Math.floor(12000 * Math.pow(1.1,oxidisation));
+    oxidisationOilCost = Math.floor(1 * Math.pow(1.1,oxidisation));
+    oxidisationGemCost = Math.floor(1 * Math.pow(1.1,oxidisation));
+    oxidisationMetalCost = Math.floor(1 * Math.pow(1.1,oxidisation));
 
-    hydrazineGoldCost = Math.floor(78600 * Math.pow(1.1,hydrazine));
-    hydrazineSiliconCost = Math.floor(96300 * Math.pow(1.1,hydrazine));
-    hydrazineTitaniumCost = Math.floor(140000 * Math.pow(1.1,hydrazine));
+    hydrazineGoldCost = Math.floor(1 * Math.pow(1.1,hydrazine));
+    hydrazineSiliconCost = Math.floor(1 * Math.pow(1.1,hydrazine));
+    hydrazineTitaniumCost = Math.floor(1 * Math.pow(1.1,hydrazine));
 }
 
 function getRocket(){
-	if(metal >= 1200 && gem >= 900 && oil >= 1000){
-		metal -= 1200;
-		gem -= 900;
-		oil -= 1000;
+	if(metal >= 1 && gem >= 1 && oil >= 1){
+		metal -= 1;
+		gem -= 1;
+		oil -= 1;
 		rocket = 1;
 		document.getElementById("rocket").textContent = "Built";
 		document.getElementById("rocketRocketCost").className = "";
@@ -57,8 +57,8 @@ function getRocket(){
 }
 
 function launchRocket(){
-	if(rocket >= 1 && getResource(RESOURCE.RocketFuel) >= 20){
-		Game.resources.takeResource(RESOURCE.RocketFuel, 20);
+	if(rocket >= 1 && getResource(RESOURCE.RocketFuel) >= 1){
+		Game.resources.takeResource(RESOURCE.RocketFuel, 1);
 		rocket -= 1;
 		document.getElementById("spaceRocket").className = "hidden";
 		document.getElementById("collapseInner").className ="collapseInner";
@@ -73,16 +73,16 @@ function launchRocket(){
 
 function explore(planet){
 	var planetsData = {
-		Moon: {fuel: 20, area: "innerPlanet", resource: "lunarite"},
-		Venus: {fuel: 50, area: "innerPlanet", resource: "methane"},
-		Mars: {fuel: 80, area: "innerPlanet", resource: "titanium,silicon"},
-		AsteroidBelt: {fuel: 200, area: "innerPlanet", resource: "gold,silver"},
-		WonderStation: {fuel: 500},
-		Jupiter: {fuel: 1000, area: "outerPlanet", resource: "hydrogen"},
-		Saturn: {fuel: 2000, area: "outerPlanet", resource: "helium"},
-		Pluto: {fuel: 5000, area: "outerPlanet", resource: "ice"},
-		KuiperBelt: {fuel: 6000, area: "outerPlanet"},
-		SolCenter: {fuel: 7000}
+		Moon: {fuel: 1, area: "innerPlanet", resource: "lunarite"},
+		Venus: {fuel: 1, area: "innerPlanet", resource: "methane"},
+		Mars: {fuel: 1, area: "innerPlanet", resource: "titanium,silicon"},
+		AsteroidBelt: {fuel: 1, area: "innerPlanet", resource: "gold,silver"},
+		WonderStation: {fuel: 1},
+		Jupiter: {fuel: 1, area: "outerPlanet", resource: "hydrogen"},
+		Saturn: {fuel: 1, area: "outerPlanet", resource: "helium"},
+		Pluto: {fuel: 1, area: "outerPlanet", resource: "ice"},
+		KuiperBelt: {fuel: 1, area: "outerPlanet"},
+		SolCenter: {fuel: 1}
 	};
 
 	if(!planetsData[planet]) return console.error("Cannot explore \"" + planet + "\", data not found.");
