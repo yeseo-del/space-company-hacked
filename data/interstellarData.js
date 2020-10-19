@@ -192,14 +192,14 @@ Game.rocketPartsData = (function(){
 		unlocked: true,
 		displayNeedsUpdate: true,
 		cost: {
-			'lunarite': 100000,
-			'titanium': 100000,
-			'metal': 100000
+			'lunarite': 1,
+			'titanium': 1,
+			'metal': 1
 		},
 		defaultCost: {
-			'lunarite': 100000,
-			'titanium': 100000,
-			'metal': 100000
+			'lunarite': 1,
+			'titanium': 1,
+			'metal': 1
 		}
 	};
 
@@ -212,14 +212,14 @@ Game.rocketPartsData = (function(){
 		unlocked: true,
 		displayNeedsUpdate: true,
 		cost: {
-			'silicon': 500000,
-			'meteorite': 10000,
-			'hydrogen': 250000
+			'silicon': 1,
+			'meteorite': 1,
+			'hydrogen': 1
 		},
 		defaultCost: {
-			'silicon': 500000,
-			'meteorite': 10000,
-			'hydrogen': 250000
+			'silicon': 1,
+			'meteorite': 1,
+			'hydrogen': 1
 		}
 	};
 
@@ -232,14 +232,14 @@ Game.rocketPartsData = (function(){
 		unlocked: true,
 		displayNeedsUpdate: true,
 		cost: {
-			'silver': 200000,
-			'ice': 300000,
-			'gem': 250000
+			'silver': 1,
+			'ice': 1,
+			'gem': 1
 		},
 		defaultCost: {
-			'silver': 200000,
-			'ice': 300000,
-			'gem': 250000
+			'silver': 1,
+			'ice': 1,
+			'gem': 1
 		}
 	};
 
@@ -264,14 +264,14 @@ Game.antimatterData = (function(){
             'ice': -12000
         },
 		cost: {
-			'silver': 163000000,
-			'oil': 712000000,
-			'meteorite': 12300000
+			'silver': 1,
+			'oil': 1,
+			'meteorite': 1
 		},
 		defaultCost: {
-			'silver': 163000000,
-			'oil': 712000000,
-			'meteorite': 12300000
+			'silver': 1,
+			'oil': 1,
+			'meteorite': 1
 		}
 	};
 
@@ -296,14 +296,14 @@ Game.militaryData = (function(){
 			'speed': 15
 		},
 		cost: {
-			'metal': 870000000,
-			'gem': 420000000,
-			'silver': 390000000
+			'metal': 1,
+			'gem': 1,
+			'silver': 1
 		},
 		defaultCost: {
-			'metal': 870000000,
-			'gem': 420000000,
-			'silver': 390000000
+			'metal': 1,
+			'gem': 1,
+			'silver': 1
 		}
 	};
 
@@ -320,14 +320,14 @@ Game.militaryData = (function(){
 			'speed': 12
 		},
 		cost: {
-			'gold': 930000000,
-			'lunarite': 6100000000,
-			'meteorite': 13000000
+			'gold': 1,
+			'lunarite': 1,
+			'meteorite': 1
 		},
 		defaultCost: {
-			'gold': 930000000,
-			'lunarite': 6100000000,
-			'meteorite': 13000000
+			'gold': 1,
+			'lunarite': 1,
+			'meteorite': 1
 		}
 	};
 
@@ -344,14 +344,14 @@ Game.militaryData = (function(){
 			'speed': 10
 		},
 		cost: {
-			'titanium': 1620000000,
-			'ice': 1020000000,
-			'silicon': 1140000000
+			'titanium': 1,
+			'ice': 1,
+			'silicon': 1
 		},
 		defaultCost: {
-			'titanium': 1620000000,
-			'ice': 1020000000,
-			'silicon': 1140000000
+			'titanium': 1,
+			'ice': 1,
+			'silicon': 1
 		}
 	};
 
@@ -368,14 +368,14 @@ Game.militaryData = (function(){
 			'speed': 9
 		},
 		cost: {
-			'metal': 4900000000,
-			'uranium': 2300000000,
-			'hydrogen': 3100000000
+			'metal': 1,
+			'uranium': 1,
+			'hydrogen': 1
 		},
 		defaultCost: {
-			'metal': 4900000000,
-			'uranium': 2300000000,
-			'hydrogen': 3100000000
+			'metal': 1,
+			'uranium': 1,
+			'hydrogen': 1
 		}
 	};
 
@@ -392,14 +392,14 @@ Game.militaryData = (function(){
 			'speed': 5
 		},
 		cost: {
-			'lunarite': 5300000000,
-			'helium': 4600000000,
-			'meteorite': 1700000000
+			'lunarite': 1,
+			'helium': 1,
+			'meteorite': 1
 		},
 		defaultCost: {
-			'lunarite': 5300000000,
-			'helium': 4600000000,
-			'meteorite': 1700000000
+			'lunarite': 1,
+			'helium': 1,
+			'meteorite': 1
 		}
 	};
 
