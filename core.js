@@ -105,7 +105,7 @@ function calculateEnergyUse(delta) {
 	use += (iceDrill * iceDrillEnergyInput) + (freezer * freezerEnergyInput) + (mrFreeze * mrFreezeEnergyInput) + (overexchange * overexchangeEnergyInput);
 	
 	var energyEfficiencyTech = Game.tech.getTechData('energyEfficiencyResearch');
-	var multiplier = 1 - (energyEfficiencyTech.current * 0.01);
+	var multiplier = 1 - (energyEfficiencyTech.current * 100);
 
 	return use * multiplier;
 }
@@ -177,7 +177,7 @@ function refreshPerSec(delta){
 
 	// calculate multipliers (add prestige etc here)
 	var resourceEfficiencyTech = Game.tech.getTechData('efficiencyResearch');
-	var perSecondMultiplier = (1 + (resourceEfficiencyTech.current * 0.01)) * (1 + (Game.stargaze.entries.darkMatter.count * dmBoost));
+	var perSecondMultiplier = (1 + (resourceEfficiencyTech.current * 100)) * (1 + (Game.stargaze.entries.darkMatter.count * dmBoost));
 
 	// Now we calculate the base per second
 	uraniumps = grinder * grinderOutput * perSecondMultiplier;
@@ -355,9 +355,9 @@ function checkRedCost() {
 
 	Game.settings.turnRedOnNegative(rocketFuelps, 'rocketFuelps');
 
-	Game.settings.turnRed(getResource(RESOURCE.Wood), 2, "manualCharcoalCost");
-	Game.settings.turnRed(getResource(RESOURCE.Energy), 1000, "manualPlasmaEnergyCost");
-	Game.settings.turnRed(getResource(RESOURCE.Hydrogen), 10, "manualPlasmaHydrogenCost");
+	Game.settings.turnRed(getResource(RESOURCE.Wood), 1, "manualCharcoalCost");
+	Game.settings.turnRed(getResource(RESOURCE.Energy), 1, "manualPlasmaEnergyCost");
+	Game.settings.turnRed(getResource(RESOURCE.Hydrogen), 1, "manualPlasmaHydrogenCost");
 
 	Game.settings.turnRed(getResource(RESOURCE.Uranium), getStorage(RESOURCE.Uranium)*storagePrice, "uraniumStorageCost");
 	Game.settings.turnRed(getResource(RESOURCE.Lunarite), getStorage(RESOURCE.Uranium)/2.5*storagePrice, "uraniumStorageLunariteCost");
@@ -847,20 +847,20 @@ function checkRedCost() {
 	Game.settings.turnRed(getResource(RESOURCE.Meteorite), dysonMeteoriteCost, "dysonMeteoriteCost");
 	Game.settings.turnRed(getResource(RESOURCE.Ice), dysonIceCost, "dysonIceCost");
 
-	Game.settings.turnRed(getResource(RESOURCE.RocketFuel), 50000, "ringRocketFuelCost");
-	Game.settings.turnRed(getResource(RESOURCE.RocketFuel), 250000, "swarmRocketFuelCost");
-	Game.settings.turnRed(getResource(RESOURCE.RocketFuel), 1000000, "sphereRocketFuelCost");
+	Game.settings.turnRed(getResource(RESOURCE.RocketFuel), 1, "ringRocketFuelCost");
+	Game.settings.turnRed(getResource(RESOURCE.RocketFuel), 1, "swarmRocketFuelCost");
+	Game.settings.turnRed(getResource(RESOURCE.RocketFuel), 1, "sphereRocketFuelCost");
 
-	Game.settings.turnRed(getResource(RESOURCE.Hydrogen), 1500, "unlockPlasmaResearchHydrogenCost");
-	Game.settings.turnRed(getResource(RESOURCE.Uranium), 1500, "unlockPlasmaResearchUraniumCost");
-	Game.settings.turnRed(getResource(RESOURCE.Oil), 15000, "unlockPlasmaResearchOilCost");
-	Game.settings.turnRed(getResource(RESOURCE.Wood), 15000, "unlockPlasmaResearchWoodCost");
+	Game.settings.turnRed(getResource(RESOURCE.Hydrogen), 1, "unlockPlasmaResearchHydrogenCost");
+	Game.settings.turnRed(getResource(RESOURCE.Uranium), 1, "unlockPlasmaResearchUraniumCost");
+	Game.settings.turnRed(getResource(RESOURCE.Oil), 1, "unlockPlasmaResearchOilCost");
+	Game.settings.turnRed(getResource(RESOURCE.Wood), 1, "unlockPlasmaResearchWoodCost");
 
-	Game.settings.turnRed(getResource(RESOURCE.Energy), 75000, "unlockEmcResearchEnergyCost");
-	Game.settings.turnRed(getResource(RESOURCE.Plasma), 100, "unlockEmcResearchPlasmaCost");
+	Game.settings.turnRed(getResource(RESOURCE.Energy), 1, "unlockEmcResearchEnergyCost");
+	Game.settings.turnRed(getResource(RESOURCE.Plasma), 1, "unlockEmcResearchPlasmaCost");
 
-	Game.settings.turnRed(getResource(RESOURCE.Energy), 100000, "unlockDysonResearchEnergyCost");
-	Game.settings.turnRed(getResource(RESOURCE.Plasma), 10000, "unlockDysonResearchPlasmaCost");
+	Game.settings.turnRed(getResource(RESOURCE.Energy), 1, "unlockDysonResearchEnergyCost");
+	Game.settings.turnRed(getResource(RESOURCE.Plasma), 1, "unlockDysonResearchPlasmaCost");
 
 	// Wonders
 
