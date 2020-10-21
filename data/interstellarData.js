@@ -260,8 +260,8 @@ Game.antimatterData = (function(){
 		displayNeedsUpdate: true,
 		resourcePerSecond: {
             'antimatter': 0.5,
-            'plasma': -100,
-            'ice': -12000
+            'plasma': -1,
+            'ice': -1
         },
 		cost: {
 			'silver': 1,
