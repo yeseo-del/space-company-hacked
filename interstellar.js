@@ -254,7 +254,7 @@ Game.interstellar.antimatter = (function(){
         var resourcePass = 0;
         for(var resource in data.cost){
             if(window[resource.toString()] >= data.cost[resource.toString()]){
-                resourcePass += 1;
+                resourcePass += 250;
             }
         }
         if(resourcePass === Object.keys(data.cost).length){
