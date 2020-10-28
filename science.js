@@ -5,7 +5,7 @@ function getLab(){
 		wood -= labWoodCost;
 		gem -= labGemCost;
 		metal -= labMetalCost;
-		lab += 1;
+		lab += 250;
 	}
 }
 
@@ -14,7 +14,7 @@ function getLabT2(){
 		wood -= labT2WoodCost;
 		gem -= labT2GemCost;
 		metal -= labT2MetalCost;
-		labT2 += 1;
+		labT2 += 250;
 	}
 }
 
@@ -23,7 +23,7 @@ function getLabT3(){
 		wood -= labT3WoodCost;
 		gem -= labT3GemCost;
 		metal -= labT3MetalCost;
-		labT3 += 1;
+		labT3 += 250;
 	}
 }
 
@@ -32,7 +32,7 @@ function getLabT4(){
 		wood -= labT4WoodCost;
 		gem -= labT4GemCost;
 		metal -= labT4MetalCost;
-		labT4 += 1;
+		labT4 += 250;
 	}
 }
 
@@ -41,7 +41,7 @@ function getLabT5(){
 		wood -= labT5WoodCost;
 		gem -= labT5GemCost;
 		metal -= labT5MetalCost;
-		labT5 += 1;
+		labT5 += 250;
 	}
 }
 
