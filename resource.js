@@ -190,7 +190,7 @@ Game.resources = (function(){
             res.displayNeedsUpdate = true;
 
             for(var r in upgradeData.cost){
-                upgradeData.cost[r] *= 2;
+                upgradeData.cost[r] *= 1;
             }
             upgradeData.displayNeedsUpdate = true;
         }
@@ -210,7 +210,7 @@ Game.resources = (function(){
         for(var resource in data.cost){
             var res = Game.resources.getResourceData(resource);
             if(res.current >= data.cost[resource]){
-                resourcePass += 1;
+                resourcePass += 250;
             }
         }
         if(resourcePass === Object.keys(data.cost).length){
