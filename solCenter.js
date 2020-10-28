@@ -206,7 +206,7 @@ function getDyson(){
 		Game.resources.takeResource(RESOURCE.Silicon, dysonSiliconCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, dysonMeteoriteCost);
 		Game.resources.takeResource(RESOURCE.Ice, dysonIceCost);
-		dyson += 1;
+		dyson += 250;
 
 		updateDysonCost();
 
