@@ -192,11 +192,11 @@ const swarmTitaniumCost = 1; const swarmGoldCost = 1; const swarmSiliconCost = 1
 const sphereTitaniumCost = 1; const sphereGoldCost = 1; const sphereSiliconCost = 1; const sphereMeteoriteCost = 1; const sphereIceCost = 1; const sphereSegmentCost = 1; const sphereRocketFuelCost = 1;
 
 function updateDysonCost(){
-	dysonTitaniumCost = Math.floor(1 * Math.pow(1.02,dyson));
-	dysonGoldCost = Math.floor(1 * Math.pow(1.02,dyson));
-	dysonSiliconCost = Math.floor(1 * Math.pow(1.02,dyson));
-	dysonMeteoriteCost = Math.floor(1 * Math.pow(1.02,dyson));
-	dysonIceCost = Math.floor(1 * Math.pow(1.02,dyson));
+	dysonTitaniumCost = Math.floor(1 * Math.pow(1,dyson));
+	dysonGoldCost = Math.floor(1 * Math.pow(1,dyson));
+	dysonSiliconCost = Math.floor(1 * Math.pow(1,dyson));
+	dysonMeteoriteCost = Math.floor(1 * Math.pow(1,dyson));
+	dysonIceCost = Math.floor(1 * Math.pow(1,dyson));
 }
 
 function getDyson(){
@@ -206,7 +206,7 @@ function getDyson(){
 		Game.resources.takeResource(RESOURCE.Silicon, dysonSiliconCost);
 		Game.resources.takeResource(RESOURCE.Meteorite, dysonMeteoriteCost);
 		Game.resources.takeResource(RESOURCE.Ice, dysonIceCost);
-		dyson += 250;
+		dyson += 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
 
 		updateDysonCost();
 
