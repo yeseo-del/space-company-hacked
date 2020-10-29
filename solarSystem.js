@@ -5,7 +5,7 @@ function getChemicalPlant(){
 		metal -= chemicalPlantMetalCost;
 		gem -= chemicalPlantGemCost;
 		oil -= chemicalPlantOilCost;
-		chemicalPlant += 250;
+		chemicalPlant += 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
 		updateFuelProductionCost();
 	}
 }
@@ -15,7 +15,7 @@ function getOxidisation(){
 		metal -= oxidisationMetalCost;
 		gem -= oxidisationGemCost;
 		oil -= oxidisationOilCost;
-		oxidisation += 250;
+		oxidisation += 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
 		updateFuelProductionCost();
 	}
 }
@@ -25,7 +25,7 @@ function getHydrazine(){
 		titanium -= hydrazineTitaniumCost;
 		silicon -= hydrazineSiliconCost;
 		gold -= hydrazineGoldCost;
-		hydrazine += 250;
+		hydrazine += 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
 		updateFuelProductionCost();
 	}
 }
